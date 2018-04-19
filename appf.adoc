@@ -79,8 +79,11 @@ __Map parameters:__::
 * **`sweep_angle_axis`**
 * **`fixed_angle_axis`**
 
-__Map coordinates:__:: The x (abscissa) and y (ordinate) projection coordinates are identified by the **`standard_name`** attribute values **`projection_x_angular_coordinate`** and **`projection_y_angular_coordinate`** respectively.
+__Map coordinates:__
+_____
+The x (abscissa) and y (ordinate) projection coordinates are identified by the **`standard_name`** attribute values **`projection_x_angular_coordinate`** and **`projection_y_angular_coordinate`** respectively.
 In the case of this projection, the projection coordinates are directly related to the scanning angle of the satellite instrument.
+_____
 
 __Notes:__:: The algorithm for computing the mapping may be found at link:$$http://www.cgms-info.org/documents/pdf_cgms_03.pdf$$[http://www.cgms-info.org/documents/pdf_cgms_03.pdf]. This document assumes the point of observation is directly over the equator, and that the **`sweep_angle_axis`** is y.
 
