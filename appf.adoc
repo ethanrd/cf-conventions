@@ -79,18 +79,25 @@ __Map parameters:__::
 * **`sweep_angle_axis`**
 * **`fixed_angle_axis`**
 
-__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively. In the case of this projection, the projection coordinates in this projection are directly related to the scanning angle of the satellite instrument, and their units are radians.
+__Map coordinates:__:: The x (abscissa) and y (ordinate) projection coordinates are identified by the `standard_name` attribute values `projection_x_angular_coordinate` and `projection_y_angular_coordinate` respectively.
+In the case of this projection, the projection coordinates are directly related to the scanning angle of the satellite instrument.
 
 __Notes:__:: The algorithm for computing the mapping may be found at link:$$http://www.cgms-info.org/documents/pdf_cgms_03.pdf$$[http://www.cgms-info.org/documents/pdf_cgms_03.pdf]. This document assumes the point of observation is directly over the equator, and that the **`sweep_angle_axis`** is y.
 
-Notes on using the PROJ.4 software packages for computing the mapping may be found at  link:$$http://proj4.org/$$[http://proj4.org/] and  link:$$https://trac.osgeo.org/geotiff/$$[https://trac.osgeo.org/geotiff/] .
+ Notes on using the PROJ.4 software packages for computing the mapping may be found at  link:$$http://proj4.org/$$[http://proj4.org/] and  link:$$https://trac.osgeo.org/geotiff/$$[https://trac.osgeo.org/geotiff/] .
 
-The **`perspective_point_height`** is the distance to the surface of the ellipsoid. Adding the earth major axis gives the distance from the centre of the earth.
+ The **`perspective_point_height`** is the distance to the surface of the ellipsoid. Adding the earth major axis gives the distance from the centre of the earth.
 
-The **`sweep_angle_axis`** attribute indicates which axis the instrument sweeps. The value = "y" corresponds to the spin-stabilized Meteosat satellites, the value = "x" to the GOES-R satellite.
+ The **`sweep_angle_axis`** attribute indicates which axis the instrument sweeps. The value = "y" corresponds to the spin-stabilized Meteosat satellites, the value = "x" to the GOES-R satellite.
 
-The **`fixed_angle_axis`** attribute indicates which axis the instrument is fixed. The values are opposite to **`sweep_angle_axis`**. Only one of those two attributes is mandatory. 
+ The **`fixed_angle_axis`** attribute indicates which axis the instrument is fixed. The values are opposite to **`sweep_angle_axis`**. Only one of those two attributes is mandatory.
 
+__Deprecation Notice:__:: The use of `projection_x_coordinate` and `projection_y_coordinate` for this projection has been deprecated.
+The initial definition of this projection used these standard names to identify the projection coordinates even though their canonical units (meters) do not mach those required for this projection (radians).
+
+ The initial definition for this projection was agreed on in May 2012
+ It became available in the CF document with the release of CF 1.7 in Sept 2017.
+ It was corrected in ??? 2018.
 
 [[lambert-azimuthal-equal-area]]
 === Lambert azimuthal equal area
